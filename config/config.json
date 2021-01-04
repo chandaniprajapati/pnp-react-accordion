@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "pnp-react-accordion-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pnpReactAccordion/PnpReactAccordionWebPart.js",
+          "manifest": "./src/webparts/pnpReactAccordion/PnpReactAccordionWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PnpReactAccordionWebPartStrings": "lib/webparts/pnpReactAccordion/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
