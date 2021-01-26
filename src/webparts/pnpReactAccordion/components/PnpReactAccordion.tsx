@@ -15,6 +15,7 @@ export default class PnpReactAccordion extends React.Component<IPnpReactAccordio
       listItems: [],
       errorMessage: ''
     }
+    /** Bind service using current context */
     this._services = new SPService(this.props.context);
   }
 
@@ -22,6 +23,7 @@ export default class PnpReactAccordion extends React.Component<IPnpReactAccordio
     this.getListItems();
   }
 
+  /** Get items of selected list and set values in state */
   private async getListItems() {
     if (this.props.listName) {
       let items = await this._services.getListItems(this.props.listName);
@@ -36,6 +38,7 @@ export default class PnpReactAccordion extends React.Component<IPnpReactAccordio
     return (
       <div className={styles.pnpReactAccordion}>
         {
+          //Map list items and render in accordion
           (this.state.listItems && this.state.listItems.length) ? this.state.listItems.map((item, index) => (
             <Accordion title={item.Title} defaultCollapsed={true} className={"itemCell"} key={index}>
               <div className={"itemContent"}>
